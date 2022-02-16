@@ -57,3 +57,10 @@ class Snake:
         if self.head.heading() != LEFT and self.head.heading() != RIGHT:
             # set snake head towards 0 degrees (go right)
             self.head.setheading(RIGHT)
+
+    def reset_snake(self):
+        for segment in self.snake_segments:
+            segment.color("black")
+        self.snake_segments.clear()
+        self.create_snake()
+        self.head = self.snake_segments[0]
